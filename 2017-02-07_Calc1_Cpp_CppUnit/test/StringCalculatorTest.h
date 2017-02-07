@@ -53,6 +53,30 @@ public:
         CPPUNIT_ASSERT(calc.AddString("1,2") == 3);
     }
 
+    void ShouldReturnSumFor100Comma200()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT(calc.AddString("100,200") == 300);
+    }
+
+    void ShouldReturnSumFor0Comma0Comma0()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT(calc.AddString("0 0 0") == 0);
+    }
+
+    void ShouldReturnSumFor1Comma2Comma3()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT(calc.AddString("1,2,3") == 6);
+    }
+
+    void ShouldReturnSumFor100Comma200Comma300()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT(calc.AddString("100,200,300") == 600);
+    }
+
 public:
 
     static CppUnit::Test *suite()
@@ -86,6 +110,22 @@ public:
         suiteOfTests->addTest( new CppUnit::TestCaller<StringCalculatorTest>( 
             "ShouldReturnSumFor1Comma2", 
             &StringCalculatorTest::ShouldReturnSumFor1Comma2 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<StringCalculatorTest>( 
+            "ShouldReturnSumFor100Comma200", 
+            &StringCalculatorTest::ShouldReturnSumFor100Comma200 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<StringCalculatorTest>( 
+            "ShouldReturnSumFor0Comma0Comma0", 
+            &StringCalculatorTest::ShouldReturnSumFor0Comma0Comma0 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<StringCalculatorTest>( 
+            "ShouldReturnSumFor1Comma2Comma3", 
+            &StringCalculatorTest::ShouldReturnSumFor1Comma2Comma3 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<StringCalculatorTest>( 
+            "ShouldReturnSumFor100Comma200Comma300", 
+            &StringCalculatorTest::ShouldReturnSumFor100Comma200Comma300 ) );
 
         return suiteOfTests;
     }
