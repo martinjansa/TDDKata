@@ -41,6 +41,18 @@ public:
         CPPUNIT_ASSERT(calc.AddString("500") == 500);
     }
 
+    void ShouldReturnSumFor0Comma0()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT(calc.AddString("0 0") == 0);
+    }
+
+    void ShouldReturnSumFor1Comma2()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT(calc.AddString("1,2") == 3);
+    }
+
 public:
 
     static CppUnit::Test *suite()
@@ -66,6 +78,14 @@ public:
         suiteOfTests->addTest( new CppUnit::TestCaller<StringCalculatorTest>( 
             "ShouldReturnValueFor500", 
             &StringCalculatorTest::ShouldReturnValueFor500 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<StringCalculatorTest>( 
+            "ShouldReturnSumFor0Comma0", 
+            &StringCalculatorTest::ShouldReturnSumFor0Comma0 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<StringCalculatorTest>( 
+            "ShouldReturnSumFor1Comma2", 
+            &StringCalculatorTest::ShouldReturnSumFor1Comma2 ) );
 
         return suiteOfTests;
     }
