@@ -1,6 +1,4 @@
-The default project environment for a single task of the TDD Kata.
-
-The TDD Kata is inspired by the http://osherove.com/tdd-kata-1/ and the C++ and CPPUnit is used for the TDD tests.
+The default project environment for a single task of the TDD Kata. Copy this directory and modify the StringCalculator*.* file with the implementation of the calculator class and tests.
 
 To compile both application and tests and run the tests call the command:
     make
