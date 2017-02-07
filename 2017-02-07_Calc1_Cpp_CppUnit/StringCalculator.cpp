@@ -1,7 +1,9 @@
+#include <stdlib.h>
+
 #include "StringCalculator.h"
 
 int CStringCalculator::AddString(std::string numbers)
 {
-
-    return 0;
+    int result = atoi(numbers.c_str());
+    return result;
 }
