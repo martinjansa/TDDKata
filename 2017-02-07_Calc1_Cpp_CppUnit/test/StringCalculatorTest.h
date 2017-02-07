@@ -5,13 +5,16 @@
 #include <cppunit/TestCaller.h>
 #include <cppunit/TestSuite.h>
 
+#include "../StringCalculator.h"
+
 class StringCalculatorTest: public CppUnit::TestFixture  {
 
 public:
 
-    void DummyTest()
+    void ShouldReturnZeroForEmptyString()
     {
-        CPPUNIT_ASSERT(true);
+        CStringCalculator calc;
+        CPPUNIT_ASSERT(calc.AddString("") == 0);
     }
 
 public:
@@ -21,8 +24,8 @@ public:
         CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite( "StringCalculatorTest" );
         
         suiteOfTests->addTest( new CppUnit::TestCaller<StringCalculatorTest>( 
-            "DummyTest", 
-            &StringCalculatorTest::DummyTest ) );
+            "ShouldReturnZeroForEmptyString", 
+            &StringCalculatorTest::ShouldReturnZeroForEmptyString ) );
 
         return suiteOfTests;
     }

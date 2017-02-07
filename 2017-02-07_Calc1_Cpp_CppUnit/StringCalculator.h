@@ -3,7 +3,7 @@
 
 #include <string>
 
-class CStringCaluculator {
+class CStringCalculator {
 private:
 
 
