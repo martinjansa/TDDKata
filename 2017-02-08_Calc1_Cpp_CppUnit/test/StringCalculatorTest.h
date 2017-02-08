@@ -11,10 +11,10 @@ class CStringCalculatorTest: public CppUnit::TestFixture  {
 
 public:
 
-    void DummyTest()
+    void Should_Return_0_on_Empty_String()
     {
         CStringCalculator calc;
-        CPPUNIT_ASSERT(false);
+        CPPUNIT_ASSERT_EQUAL(0, calc.AddString(""));
     }
 
 public:
@@ -24,8 +24,8 @@ public:
         CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite( "CStringCalculatorTest" );
         
         suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
-            "DummyTest", 
-            &CStringCalculatorTest::DummyTest ) );
+            "Should_Return_0_on_Empty_String", 
+            &CStringCalculatorTest::Should_Return_0_on_Empty_String ) );
 
         return suiteOfTests;
     }

@@ -3,5 +3,5 @@
 int CStringCalculator::AddString(std::string numbers)
 {
 
-    return -1;
+    return 0;
 }
