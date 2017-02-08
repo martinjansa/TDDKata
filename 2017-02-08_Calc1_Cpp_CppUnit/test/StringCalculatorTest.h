@@ -53,6 +53,24 @@ public:
         CPPUNIT_ASSERT_EQUAL(200, calc.AddString("100,100"));
     }
 
+    void Should_Return_Value_on_0_and_0_and_0()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT_EQUAL(0, calc.AddString("0,0,0"));
+    }
+
+    void Should_Return_Value_on_1_and_1_and_1()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT_EQUAL(3, calc.AddString("1,1,1"));
+    }
+
+    void Should_Return_Value_on_100_and_100_and_100()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT_EQUAL(300, calc.AddString("100,100,100"));
+    }
+
 public:
 
     static CppUnit::Test *suite()
@@ -86,6 +104,18 @@ public:
         suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
             "Should_Return_Value_on_100_and_100", 
             &CStringCalculatorTest::Should_Return_Value_on_100_and_100 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
+            "Should_Return_Value_on_0_and_0_and_0", 
+            &CStringCalculatorTest::Should_Return_Value_on_0_and_0_and_0 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
+            "Should_Return_Value_on_1_and_1_and_1", 
+            &CStringCalculatorTest::Should_Return_Value_on_1_and_1_and_1 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
+            "Should_Return_Value_on_100_and_100_and_100", 
+            &CStringCalculatorTest::Should_Return_Value_on_100_and_100_and_100 ) );
 
         return suiteOfTests;
     }
