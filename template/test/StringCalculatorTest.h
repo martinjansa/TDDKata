@@ -5,24 +5,27 @@
 #include <cppunit/TestCaller.h>
 #include <cppunit/TestSuite.h>
 
-class StringCalculatorTest: public CppUnit::TestFixture  {
+#include "../StringCalculator.h"
+
+class CStringCalculatorTest: public CppUnit::TestFixture  {
 
 public:
 
     void DummyTest()
     {
-        CPPUNIT_ASSERT(true);
+        CStringCalculator calc;
+        CPPUNIT_ASSERT(false);
     }
 
 public:
 
     static CppUnit::Test *suite()
     {
-        CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite( "StringCalculatorTest" );
+        CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite( "CStringCalculatorTest" );
         
-        suiteOfTests->addTest( new CppUnit::TestCaller<StringCalculatorTest>( 
+        suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
             "DummyTest", 
-            &StringCalculatorTest::DummyTest ) );
+            &CStringCalculatorTest::DummyTest ) );
 
         return suiteOfTests;
     }
