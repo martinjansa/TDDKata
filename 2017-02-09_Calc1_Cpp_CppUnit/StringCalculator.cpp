@@ -14,7 +14,10 @@ int CStringCalculator::AddString(const std::string &numbers)
 
         // get the numeric value of both numbers before and after it
         result = atoi(numbers.substr(0, comma_pos).c_str());
-        result += atoi(numbers.substr(comma_pos + 1).c_str());
+
+        // a recursive call to process the numbers behind the first separator
+        result += AddString(numbers.substr(comma_pos + 1).c_str());
+        
     } else {
 
         // convert whole text to number
