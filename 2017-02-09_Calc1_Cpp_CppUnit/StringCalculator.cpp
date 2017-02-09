@@ -2,7 +2,7 @@
 
 #include "StringCalculator.h"
 
-int CStringCalculator::AddString(std::string numbers)
+int CStringCalculator::AddString(const std::string &numbers)
 {
     int result = 0;
 

@@ -8,7 +8,7 @@ private:
 
 
 public:
-	int AddString(std::string numbers);
+	int AddString(const std::string &numbers);
 };
 
 
