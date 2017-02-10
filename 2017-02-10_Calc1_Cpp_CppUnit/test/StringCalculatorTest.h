@@ -41,6 +41,18 @@ public:
         CPPUNIT_ASSERT_EQUAL(600, calc.AddString("100,200,300"));
     }
 
+    void Should_Return_1_on_Colon_Separator_Config_and_1()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT_EQUAL(1, calc.AddString("//:\n1"));
+    }
+
+    void Should_Return_3_on_Colon_Separator_Config_and_1_and_2()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT_EQUAL(3, calc.AddString("//:\n1:2"));
+    }
+
 public:
 
     static CppUnit::Test *suite()
@@ -66,6 +78,14 @@ public:
         suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
             "Should_Return_600_on_100_and_200_and_300", 
             &CStringCalculatorTest::Should_Return_600_on_100_and_200_and_300 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
+            "Should_Return_1_on_Colon_Separator_Config_and_1", 
+            &CStringCalculatorTest::Should_Return_1_on_Colon_Separator_Config_and_1 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
+            "Should_Return_3_on_Colon_Separator_Config_and_1_and_2", 
+            &CStringCalculatorTest::Should_Return_3_on_Colon_Separator_Config_and_1_and_2 ) );
 
         return suiteOfTests;
     }
