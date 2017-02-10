@@ -23,6 +23,12 @@ public:
         CPPUNIT_ASSERT_EQUAL(0, calc.AddString("0"));
     }
 
+    void Should_Return_100_on_100()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT_EQUAL(100, calc.AddString("100"));
+    }
+
 public:
 
     static CppUnit::Test *suite()
@@ -36,6 +42,10 @@ public:
         suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
             "Should_Return_0_on_0", 
             &CStringCalculatorTest::Should_Return_0_on_0 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
+            "Should_Return_100_on_100", 
+            &CStringCalculatorTest::Should_Return_100_on_100 ) );
 
         return suiteOfTests;
     }
