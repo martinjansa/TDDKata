@@ -21,7 +21,7 @@ int CStringCalculator::AddString(std::string numbers)
             result = atoi(numbers.substr(0, comma_pos).c_str());
 
             // convert the text after the separator to number
-            result += atoi(numbers.substr(comma_pos + 1).c_str());
+            result += AddString(numbers.substr(comma_pos + 1));
 
         } else {
 
