@@ -53,6 +53,12 @@ public:
         CPPUNIT_ASSERT_EQUAL(3, calc.AddString("//:\n1:2"));
     }
 
+    void Should_Return_6_on_Dash_and_backspace_Separator_Config_and_1_and_2_and_3()
+    {
+        CStringCalculator calc;
+        CPPUNIT_ASSERT_EQUAL(6, calc.AddString("//-\n1-2-3"));
+    }
+
 public:
 
     static CppUnit::Test *suite()
@@ -86,6 +92,10 @@ public:
         suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
             "Should_Return_3_on_Colon_Separator_Config_and_1_and_2", 
             &CStringCalculatorTest::Should_Return_3_on_Colon_Separator_Config_and_1_and_2 ) );
+
+        suiteOfTests->addTest( new CppUnit::TestCaller<CStringCalculatorTest>( 
+            "Should_Return_6_on_Dash_and_backspace_Separator_Config_and_1_and_2_and_3", 
+            &CStringCalculatorTest::Should_Return_6_on_Dash_and_backspace_Separator_Config_and_1_and_2_and_3 ) );
 
         return suiteOfTests;
     }

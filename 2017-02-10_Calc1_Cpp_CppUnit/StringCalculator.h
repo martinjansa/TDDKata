@@ -6,6 +6,7 @@
 class CStringCalculator {
 private:
 
+	int AddStringInt(const std::string &separators, const std::string &numbers);
 
 public:
 	int AddString(std::string numbers);
