@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "StringCalculator.h"
 
 int CStringCalculator::AddString(std::string numbers)
@@ -10,7 +11,7 @@ int CStringCalculator::AddString(std::string numbers)
 
     } else {
 
-        result = -1;
+        result = atoi(numbers.c_str());
     }
 
     return result;
