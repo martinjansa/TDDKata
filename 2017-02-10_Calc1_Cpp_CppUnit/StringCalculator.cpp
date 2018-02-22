@@ -41,6 +41,7 @@ int CStringCalculator::AddString(std::string numbers)
     // search for the new line
     std::string::size_type new_line_pos = numbers.find('\n');
 
+    // ggdfgjdf
     std::string::size_type numbers_pos = 0;
 
     std::string separators = ",";
